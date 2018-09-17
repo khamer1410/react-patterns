@@ -3,7 +3,6 @@
     "target": "es6",
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    // "checkJs": false,
     "baseUrl": ".",
     "paths": {
       "*": [
@@ -14,5 +13,4 @@
   "include": [
     "src/**/*"
   ],
-  // "allowJS": true
 }
