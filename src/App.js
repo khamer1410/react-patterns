@@ -23,16 +23,23 @@ const Home = () => (
   </div>
 )
 
+const Links = () => (
+  <div>
+    <h2>Links</h2>
+  </div>
+)
+
 const Main = props => (
   <div>
     <Route path='/home' component={Home} />
+    <Route path='/links' component={Links} />
     <div>
       <ul>
         <li>
           <Link to='/home'>Home</Link>
         </li>
         <li>
-          <Link to='/'>name</Link>
+          <Link to='/links'>Links</Link>
         </li>
         <li>
           <Link to='/'>name</Link>
