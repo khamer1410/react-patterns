@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 import { Route, Link } from "react-router-dom"
 import './App.css'
 import { Header } from 'layouts/Header'
+import ModalPage from 'layouts/ModalPage'
 
 class App extends Component {
   render() {
     return (
-        <div className="App">
-          <Header/>
-          <Main/>
-        </div>
+      <div className="App">
+        <Header />
+        <Main />
+      </div>
     )
   }
 }
@@ -31,8 +32,6 @@ const Links = () => (
 
 const Main = props => (
   <div>
-    <Route path='/home' component={Home} />
-    <Route path='/links' component={Links} />
     <div>
       <ul>
         <li>
@@ -44,8 +43,14 @@ const Main = props => (
         <li>
           <Link to='/'>name</Link>
         </li>
+        <li>
+          <Link to='/modal'>Modal</Link>
+        </li>
       </ul>
     </div>
+    <Route path='/home' component={Home} />
+    <Route path='/links' component={Links} />
+    <Route path='/modal' component={ModalPage} />
     <p className="App-intro">
       To get started, edit <code>src/App.js</code> and save to reload.
     </p>

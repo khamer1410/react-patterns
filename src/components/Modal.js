@@ -1,90 +1,65 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Transition from 'react-transition-group/Transition';
 
-class ModalComponent extends Component {
+const duration = 300;
+
+const defaultStyle = {
+  transition: `opacity ${duration}ms`,
+  opacity: 0,
+};
+
+const transitionStyles = {
+  entering: { opacity: 0 },
+  entered: { opacity: 1 },
+};
+
+export class Modal extends Component {
+  static propTypes = {
+    show: PropTypes.bool,
+    onClose: PropTypes.func,
+    header: PropTypes.node,
+    children: PropTypes.node,
+  };
+
   static defaultProps = {
     show: false,
     onClose: () => { },
+    header: null,
+    children: null,
   };
 
-  static propTypes = {
-    show: PropTypes.bool,
-    onClose: PropTypes.func.isRequired,
-    header: PropTypes.element,
-  };
+  componentDidMount = () => window.addEventListener('keydown', this.handleKeyDown);
 
-  componentDidMount() {
-    window.addEventListener('keydown', this.onEscapeDown);
-  }
+  componentWillUnmount = () => window.removeEventListener('keydown', this.handleKeyDown);
 
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.onEscapeDown);
-  }
+  handleKeyDown = ({ key }) => key === 'Escape' && this.props.onClose();
 
-  onEscapeDown = ({ key }) => {
-    key === 'Escape' && this.props.onClose();
-  };
-
-  onOutsideClick = ({ target, currentTarget }) => {
-    target === currentTarget && this.props.onClose();
-  };
+  handleBackgroundClick = ({ target, currentTarget }) => target === currentTarget && this.props.onClose();
 
   render() {
-    const { show, style, onClose, header, children, ...custom } = this.props;
+    const { show, onClose, header, children, ...props } = this.props;
 
-    if (!show) return null;
-
-    return (
-      <ModalBackground onClick={this.onOutsideClick}>
-        <ModalContent style={style} {...custom}>
-          <ModalHeader>
-            <HeaderContent>{header}</HeaderContent>
-            <CloseButton onClick={onClose} />
-          </ModalHeader>
-          {children}
-        </ModalContent>
-      </ModalBackground>
+    return createPortal(
+      <Transition in={show} mountOnEnter unmountOnExit timeout={duration}>
+        {state => (
+          <ModalBackground onClick={this.handleBackgroundClick} style={{ ...defaultStyle, ...transitionStyles[state] }}>
+            <ModalContent {...props}>
+              <ModalHeader>
+                <HeaderContent>{header}</HeaderContent>
+                <CloseButton onClick={onClose} />
+              </ModalHeader>
+              {children}
+            </ModalContent>
+          </ModalBackground>
+        )}
+      </Transition>,
+      document.getElementById('modal-root')
     );
   }
 }
-
-// TODO: Parent Wrapper component to ensure children lifecycle methods will fire. Will be replaced with TransitionGroup
-export class Modal extends Component {
-  static defaultProps = {
-    show: false,
-  };
-
-  static propTypes = {
-    show: PropTypes.bool,
-  };
-
-  render() {
-    if (!this.props.show) return null;
-
-    return createPortal(<ModalComponent {...this.props} />, document.getElementById('modal-root'));
-  }
-}
-
-export const CloseIcon = ({ stroke, strokeWidth, ...props }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
-    <path
-      fill="none"
-      fillRule="evenodd"
-      stroke={stroke}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={strokeWidth}
-      d="M1 15L15 1M1 1l14 14"
-    />
-  </svg>
-);
-
-CloseIcon.defaultProps = {
-  stroke: '#A5A5A5',
-  strokeWidth: '1.5',
-};;
 
 const ModalBackground = styled.div`
   position: fixed;
@@ -107,23 +82,23 @@ const ModalContent = styled.div`
   background: white;
   transition: 0.5s;
 
-  /* ${screenSize.desktop`
+@media screen and (max-width: 800px) {
     top: 8px;
     right: 8px;
     bottom: 8px;
-    left: 8px;  
+    left: 8px;
 
     width: calc(100% - 16px);
     height: calc(100% - 16px);
     padding: 15px;
-  `} 
-  
-  ${screenSize.desktop`
+}
+
+ @media screen and (min-width: 800px)  {
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
     padding: 25px;
-  `}; */
+ }
 `;
 
 const CLOSE_BUTTON_SIZE = '24px';
@@ -132,10 +107,26 @@ const ModalHeader = styled.div`
   display: flex;
 `;
 
+// prettier-ignore
 const HeaderContent = styled.div`
   flex: 1;
   padding-left: ${CLOSE_BUTTON_SIZE};
+  margin-top: 18px;
 `;
+
+export const CloseIcon = ({ stroke, strokeWidth, ...props }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <path
+      fill="none"
+      fillRule="evenodd"
+      stroke='grey'
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth='1.5'
+      d="M1 15L15 1M1 1l14 14"
+    />
+  </svg>
+);
 
 const CloseButton = styled(CloseIcon)`
   width: ${CLOSE_BUTTON_SIZE};
@@ -146,9 +137,9 @@ const CloseButton = styled(CloseIcon)`
   margin-left: auto;
   box-sizing: content-box;
   cursor: pointer;
+  transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 
   &:hover {
     transform: rotate(90deg);
   }
-  transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 `;
