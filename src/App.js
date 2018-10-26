@@ -10,14 +10,18 @@ import ModalPage from 'layouts/ModalPage'
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Header />
-          <Navbar />
-          <hr />
-          <Main />
-        </div>
-      </Router>
+      <div className="App">
+        <Header />
+        <Router>
+          <div>
+            <Navbar />
+            <hr />
+            <Route path='/home' component={Home} />
+            <Route path='/links' component={Links} />
+            <Route path='/modal' component={ModalPage} />
+          </div>
+        </Router>
+      </div>
     )
   }
 }
@@ -36,12 +40,3 @@ const Links = () => (
     <h2>Links</h2>
   </div>
 )
-
-const Main = props => (
-  <div>
-    <Route path='/home' component={Home} />
-    <Route path='/links' component={Links} />
-    <Route path='/modal' component={ModalPage} />
-  </div>
-)
-

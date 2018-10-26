@@ -1,9 +1,10 @@
 import React from 'react'
+import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
 export const Navbar = props => (
   <div>
-    <ul>
+    <StyledNav>
       <li>
         <Link to='/home'>Home</Link>
       </li>
@@ -13,6 +14,15 @@ export const Navbar = props => (
       <li>
         <Link to='/modal'>Modal</Link>
       </li>
-    </ul>
+    </StyledNav>
   </div>
 )
+
+const StyledNav = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  li {
+    text-decoration: none;
+    cursor: pointer;
+  }
+`
