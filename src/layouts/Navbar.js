@@ -6,7 +6,7 @@ export const Navbar = props => (
   <div>
     <StyledNav>
       <li>
-        <Link to='/home'>Home</Link>
+        <Link to='/'>Home</Link>
       </li>
       <li>
         <Link to='/links'>Links</Link>

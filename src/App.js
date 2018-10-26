@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from "react-router-dom"
 import { BrowserRouter as Router } from 'react-router-dom'
-
+import styled from 'styled-components';
 import './App.css'
 import { Navbar } from "layouts/Navbar";
 import { Header } from 'layouts/Header'
@@ -13,7 +13,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Router>
-          <div>
+          <Background>
             <Navbar />
             <hr />
             <Switch>
@@ -22,7 +22,7 @@ class App extends Component {
               <Route path='/modal' component={ModalPage} />
               <Route component={NotFound} />
             </Switch>
-          </div>
+          </Background>
         </Router>
       </div>
     )
@@ -43,3 +43,8 @@ const Links = () => (
     <h2>Links</h2>
   </div>
 )
+
+const Background = styled.div`
+  min-height: 100vh;
+  background: url('navy-background.jpg'), silver;
+`
