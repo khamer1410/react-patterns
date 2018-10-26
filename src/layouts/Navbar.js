@@ -14,6 +14,9 @@ export const Navbar = props => (
       <li>
         <Link to='/modal'>Modal</Link>
       </li>
+      <li>
+        <Link to='/404'>Not Found</Link>
+      </li>
     </StyledNav>
   </div>
 )

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Route } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import './App.css'
 import { Navbar } from "layouts/Navbar";
 import { Header } from 'layouts/Header'
 import ModalPage from 'layouts/ModalPage'
-
+import NotFound from 'components/NotFound'
 class App extends Component {
   render() {
     return (
@@ -16,9 +16,12 @@ class App extends Component {
           <div>
             <Navbar />
             <hr />
-            <Route path='/home' component={Home} />
-            <Route path='/links' component={Links} />
-            <Route path='/modal' component={ModalPage} />
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/links' component={Links} />
+              <Route path='/modal' component={ModalPage} />
+              <Route component={NotFound} />
+            </Switch>
           </div>
         </Router>
       </div>
