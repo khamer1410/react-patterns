@@ -1,6 +1,17 @@
 # REACT PATTERNS
 CRA based project to test and experiment with react patterns & API.
 
+##DONE list:
+- React Router
+- Modal component in React Portal
+
+##TODO list:
+- container / components with redux & context api
+- HOC
+- render props
+- styling with StyledComponents
+
+
 -------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
