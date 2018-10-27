@@ -1,11 +1,11 @@
 # REACT PATTERNS
 CRA based project to test and experiment with react patterns & API.
 
-##DONE list:
+## DONE list:
 - React Router
 - Modal component in React Portal
 
-##TODO list:
+## TODO list:
 - container / components with redux & context api
 - HOC
 - render props
