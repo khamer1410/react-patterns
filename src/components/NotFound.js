@@ -3,16 +3,16 @@ import { Redirect } from 'react-router-dom'
 export default class NotFound extends Component {
   state = {
     count: 5,
-    countDownInterval: null,
   }
 
+  countDownInterval = null;
+
   componentDidMount = () => {
-    const countDownInterval = setInterval(this.countdown, 1000)
-    this.setState({ countDownInterval })
+    this.countDownInterval = setInterval(this.countdown, 1000)
   }
 
   componentWillUnmount = () => {
-    clearInterval(this.state.countDownInterval)
+    clearInterval(this.countDownInterval)
   }
 
   countdown = () => {
