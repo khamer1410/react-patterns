@@ -37,9 +37,10 @@ const Main = styled.div`
 
 const Container = styled.div`
   display: grid;
+  grid-template-columns: 200px auto;
   grid-template-areas:
-    "header header header header header"
-    "nav main main main main";
+    "header header"
+    "nav main";
 `
 
 const Home = () => (
