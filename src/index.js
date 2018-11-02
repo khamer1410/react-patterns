@@ -21,6 +21,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     font-family: sans-serif;
   }
+
+  * {
+    box-sizing: border-box;
+  }
 `
 ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()

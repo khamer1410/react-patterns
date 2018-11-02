@@ -10,6 +10,8 @@ CRA based project to test and experiment with react patterns & API.
 - HOC
 - render props
 - styling with StyledComponents
+- conditionals
+- grid layout
 
 
 -------------------------------
