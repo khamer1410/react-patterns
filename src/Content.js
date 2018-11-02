@@ -6,31 +6,42 @@ import { Navbar } from "layouts/Navbar"
 import { Header } from 'layouts/Header'
 import ModalPage from 'layouts/ModalPage'
 import NotFound from 'components/NotFound'
+import ConditionalRendering from 'layouts/ConditionalRendering'
 
 export default class Content extends Component {
   render() {
     return (
-      <div className="App">
+      <Container>
         <Header />
-        <Background>
-          <Navbar />
-          <hr />
+        <Navbar />
+        <Main>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/links' component={Links} />
             <Route path='/modal' component={ModalPage} />
+            <Route path='/conditional-rendering' component={ConditionalRendering} />
             <Route component={NotFound} />
           </Switch>
-        </Background>
-      </div>
+        </Main>
+      </Container>
     )
   }
 }
 
-const Background = styled.div`
+const Main = styled.div`
+  grid-area: main;
   min-height: 100vh;
+  padding: 10px;
   background: url('navy-background.jpg'), silver;
 `
+
+const Container = styled.div`
+  display: grid;
+  grid-template-areas:
+    "header header header header header"
+    "nav main main main main";
+`
+
 const Home = () => (
   <div>
     <h2>Home</h2>

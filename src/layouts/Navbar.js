@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
 export const Navbar = props => (
-  <div>
+  <Wrapper>
     <StyledNav>
       <li>
         <Link to='/'>Home</Link>
@@ -15,16 +15,28 @@ export const Navbar = props => (
         <Link to='/modal'>Modal</Link>
       </li>
       <li>
+        <Link to='/conditional-rendering'>Conditional rendering</Link>
+      </li>
+      <li>
         <Link to='/404'>Not Found</Link>
       </li>
     </StyledNav>
-  </div>
+  </Wrapper>
 )
 
-const StyledNav = styled.ul`
+const Wrapper = styled.div`
+  grid-area: nav;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+`
+
+const StyledNav = styled.ul`
+  list-style: none;
   li {
+    padding: 5px;
+  }
+  li a {
+    text-align: center;
     text-decoration: none;
     cursor: pointer;
   }
