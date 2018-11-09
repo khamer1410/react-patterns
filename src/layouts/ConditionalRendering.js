@@ -51,7 +51,6 @@ export default class ConditionalRendering extends Component {
         <ConditionalExample heading='HOC'>
           {withHOC(isOpen)(this.props)}
         </ConditionalExample>
-
       </Fragment>
     )
   }

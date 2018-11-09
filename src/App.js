@@ -16,7 +16,7 @@ export default class App extends Component {
         <Navbar />
         <Main>
           <Switch>
-            <Route path='/links' component={Links} />
+            <Route exact path='/' component={Links} />
             <Route path='/components-demo' component={DemoPage} />
             <Route path='/conditional-rendering' component={ConditionalRendering} />
             <Route component={NotFound} />
