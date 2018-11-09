@@ -12,7 +12,7 @@ export const Navbar = props => (
         <Link to='/links'>Links</Link>
       </li>
       <li>
-        <Link to='/modal'>Modal</Link>
+        <Link to='/components-demo'>Components demo</Link>
       </li>
       <li>
         <Link to='/conditional-rendering'>Conditional rendering</Link>
@@ -31,13 +31,25 @@ const Wrapper = styled.div`
 `
 
 const StyledNav = styled.ul`
-  list-style: none;
+  padding: 0;
   li {
-    padding: 5px;
+    list-style: none;
+    padding: 15px 0;
   }
   li a {
-    text-align: center;
-    text-decoration: none;
+    color: rgba(0,0,0, 0.4);
     cursor: pointer;
+    text-align: left;
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding-left: 15px;
+    transition: 0.8s;
+
+    &:hover {
+      color: rgba(0,0,0, 0.8);
+    }
   }
 `
