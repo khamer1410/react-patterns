@@ -35,11 +35,23 @@ export default class ConditionalRendering extends Component {
         </ConditionalExample>
 
         <ConditionalExample heading='Ternary operator'>
-          {isOpen
-            ? <p>OPEN</p>
-            : <p>CLOSED</p>
-          }
+          {isOpen ? <p>OPEN</p> : <p>CLOSED</p>}
         </ConditionalExample>
+
+        <ConditionalExample heading='separate component'>
+          <StatusPresenter isOpen={isOpen} />
+        </ConditionalExample>
+
+        <ConditionalExample heading='IIFE'>
+          {((isOpen) => {
+            return isOpen ? <p>OPEN</p> : <p>CLOSED</p>
+          })(isOpen)}
+        </ConditionalExample>
+
+        <ConditionalExample heading='HOC'>
+          {withHOC(isOpen)(this.props)}
+        </ConditionalExample>
+
       </Fragment>
     )
   }
@@ -51,3 +63,22 @@ const ConditionalExample = ({ heading, children }) => (
     {children}
   </div>
 )
+
+const StatusPresenter = ({ isOpen }) => {
+  let view = null;
+  if (isOpen) { view = <p>OPEN</p> }
+  if (!isOpen) { view = <p>CLOSED</p> }
+
+  return view
+}
+
+// HOC boilerplate
+const Open = () => <p>OPEN</p>
+
+const Closed = () => <p>CLOSED</p>
+
+const HOC = (firstComponent, secondComponent) => condition => props => {
+  return condition ? firstComponent(props) : secondComponent(props)
+}
+
+const withHOC = HOC(Open, Closed)
