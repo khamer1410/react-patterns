@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 export default class ConditionalRendering extends Component {
   state = {
@@ -15,7 +15,7 @@ export default class ConditionalRendering extends Component {
     const { isOpen } = this.state
 
     return (
-      <div>
+      <Fragment>
         <div>
           <button
             onClick={this.toggleState}
@@ -40,7 +40,7 @@ export default class ConditionalRendering extends Component {
             : <p>CLOSED</p>
           }
         </ConditionalExample>
-      </div>
+      </Fragment>
     )
   }
 }

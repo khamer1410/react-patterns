@@ -16,7 +16,6 @@ export default class App extends Component {
         <Navbar />
         <Main>
           <Switch>
-            <Route exact path='/' component={Home} />
             <Route path='/links' component={Links} />
             <Route path='/components-demo' component={DemoPage} />
             <Route path='/conditional-rendering' component={ConditionalRendering} />
@@ -42,12 +41,6 @@ const Container = styled.div`
     "header header"
     "nav main";
 `
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
 
 const Links = () => (
   <div>

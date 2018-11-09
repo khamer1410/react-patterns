@@ -6,9 +6,6 @@ export const Navbar = props => (
   <Wrapper>
     <StyledNav>
       <li>
-        <Link to='/'>Home</Link>
-      </li>
-      <li>
         <Link to='/links'>Links</Link>
       </li>
       <li>
