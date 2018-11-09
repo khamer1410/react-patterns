@@ -25,24 +25,29 @@ export default class ConditionalRendering extends Component {
         </div>
         <hr />
 
-        <div>
-          <h2> && operator </h2>
+        <ConditionalExample heading='&& operator'>
           {!isOpen && (
             <p>CLOSED</p>
           )}
           {isOpen && (
             <p>OPEN</p>
           )}
-        </div>
+        </ConditionalExample>
 
-        <div>
-          <h2> Ternary operator </h2>
+        <ConditionalExample heading='Ternary operator'>
           {isOpen
             ? <p>OPEN</p>
             : <p>CLOSED</p>
           }
-        </div>
+        </ConditionalExample>
       </div>
     )
   }
 }
+
+const ConditionalExample = ({ heading, children }) => (
+  <div>
+    <h2> {heading} </h2>
+    {children}
+  </div>
+)

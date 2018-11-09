@@ -4,11 +4,11 @@ import styled from 'styled-components'
 import './App.css'
 import { Navbar } from "layouts/Navbar"
 import { Header } from 'layouts/Header'
-import ModalPage from 'layouts/ModalPage'
+import DemoPage from 'layouts/componentsDemo/DemoPage';
 import NotFound from 'components/NotFound'
 import ConditionalRendering from 'layouts/ConditionalRendering'
 
-export default class Content extends Component {
+export default class App extends Component {
   render() {
     return (
       <Container>
@@ -18,7 +18,7 @@ export default class Content extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/links' component={Links} />
-            <Route path='/modal' component={ModalPage} />
+            <Route path='/components-demo' component={DemoPage} />
             <Route path='/conditional-rendering' component={ConditionalRendering} />
             <Route component={NotFound} />
           </Switch>

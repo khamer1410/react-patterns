@@ -15,7 +15,8 @@ const Wrapper = styled.header`
   display: flex;
   align-items: center;
   background-color: #222;
-  padding: 20px;
+  background: linear-gradient(45deg, #222 60%, purple);
+  padding: 10px;
   color: white;
 `
 

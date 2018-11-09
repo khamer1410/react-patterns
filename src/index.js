@@ -4,13 +4,13 @@ import registerServiceWorker from './registerServiceWorker'
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter as Router } from "react-router-dom"
 
-import Content from 'Content'
+import App from 'App'
 
-const App = () => (
+const AppContainer = () => (
   <Fragment>
     <GlobalStyles />
     <Router>
-      <Content />
+      <App />
     </Router>
   </Fragment>
 )
@@ -26,5 +26,5 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 `
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<AppContainer />, document.getElementById('root'))
 registerServiceWorker()
