@@ -18,8 +18,8 @@ const transitionStyles = {
 
 export class Modal extends Component {
   static propTypes = {
-    show: PropTypes.bool,
-    onClose: PropTypes.func,
+    show: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
     header: PropTypes.node,
     children: PropTypes.node,
   };

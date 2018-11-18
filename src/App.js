@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from "react-router-dom"
 import styled from 'styled-components'
-import './App.css'
+import 'style/App.css'
 import { Navbar } from "layouts/Navbar"
 import { Header } from 'layouts/Header'
 import DemoPage from 'layouts/componentsDemo/DemoPage';

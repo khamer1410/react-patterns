@@ -27,15 +27,15 @@ export default class ConditionalRendering extends Component {
 
         <ConditionalExample heading='&& operator'>
           {!isOpen && (
-            <p>CLOSED</p>
+            <Closed />
           )}
           {isOpen && (
-            <p>OPEN</p>
+            <Open />
           )}
         </ConditionalExample>
 
         <ConditionalExample heading='Ternary operator'>
-          {isOpen ? <p>OPEN</p> : <p>CLOSED</p>}
+          {isOpen ? <Open /> : <Closed />}
         </ConditionalExample>
 
         <ConditionalExample heading='separate component'>
@@ -44,7 +44,7 @@ export default class ConditionalRendering extends Component {
 
         <ConditionalExample heading='IIFE'>
           {((isOpen) => {
-            return isOpen ? <p>OPEN</p> : <p>CLOSED</p>
+            return isOpen ? <Open /> : <Closed />
           })(isOpen)}
         </ConditionalExample>
 
@@ -65,8 +65,8 @@ const ConditionalExample = ({ heading, children }) => (
 
 const StatusPresenter = ({ isOpen }) => {
   let view = null;
-  if (isOpen) { view = <p>OPEN</p> }
-  if (!isOpen) { view = <p>CLOSED</p> }
+  if (isOpen) { view = <Open /> }
+  if (!isOpen) { view = <Closed /> }
 
   return view
 }
