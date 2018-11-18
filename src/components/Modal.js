@@ -71,7 +71,6 @@ const ModalBackground = styled.div`
   z-index: 9999;
 `;
 
-// prettier-ignore
 const ModalContent = styled.div`
   position: fixed;
 
@@ -107,11 +106,9 @@ const ModalHeader = styled.div`
   display: flex;
 `;
 
-// prettier-ignore
 const HeaderContent = styled.div`
   flex: 1;
   padding-left: ${CLOSE_BUTTON_SIZE};
-  margin-top: 18px;
 `;
 
 export const CloseIcon = ({ stroke, strokeWidth, ...props }) => (
