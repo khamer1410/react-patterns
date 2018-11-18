@@ -5,6 +5,9 @@ import { Modal } from 'components/Modal'
 import { login } from 'utils/authentication'
 
 // TODO: Add name input
+const defaultProps = {
+  onClose: () => { }
+}
 
 export const HeaderModal = props => {
   const loginBtnHandler = () => {
@@ -24,6 +27,7 @@ export const HeaderModal = props => {
     </Modal>);
 }
 
+HeaderModal.defaultProps = defaultProps
 export default HeaderModal
 
 const Wrapper = styled.section`

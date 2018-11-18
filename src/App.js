@@ -19,6 +19,7 @@ export default class App extends Component {
             <Route exact path='/' component={Links} />
             <Route path='/components-demo' component={DemoPage} />
             <Route path='/conditional-rendering' component={ConditionalRendering} />
+            {/* 404# scenarios */}
             <Route component={NotFound} />
           </Switch>
         </Main>
@@ -31,7 +32,7 @@ const Main = styled.div`
   grid-area: main;
   min-height: 100vh;
   padding: 10px;
-  background: url('navy-background.jpg'), silver;
+  background: silver;
 `
 
 const Container = styled.div`
