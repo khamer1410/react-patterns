@@ -15,6 +15,9 @@ export const Navbar = props => (
         <Link to='/conditional-rendering'>Conditional rendering</Link>
       </li>
       <li>
+        <Link to='/private'>Private route</Link>
+      </li>
+      <li>
         <Link to='/404'>Not Found</Link>
       </li>
     </StyledNav>

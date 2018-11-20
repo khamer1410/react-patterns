@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch, Redirect } from "react-router-dom"
 import styled from 'styled-components'
 import 'style/App.css'
 import { Navbar } from "layouts/Navbar"
 import { Header } from 'layouts/Header'
-import DemoPage from 'layouts/componentsDemo/DemoPage';
+import DemoPage from 'layouts/componentsDemo/DemoPage'
 import NotFound from 'components/NotFound'
 import ConditionalRendering from 'layouts/ConditionalRendering'
+import { getCurrentUser } from 'utils/authentication'
 
+
+// TODO: move routes to separate config
 export default class App extends Component {
   render() {
     return (
@@ -19,6 +22,7 @@ export default class App extends Component {
             <Route exact path='/' component={Links} />
             <Route path='/components-demo' component={DemoPage} />
             <Route path='/conditional-rendering' component={ConditionalRendering} />
+            <PrivateRoute path='/private' component={NotFound} />
             {/* 404# scenarios */}
             <Route component={NotFound} />
           </Switch>
@@ -28,6 +32,24 @@ export default class App extends Component {
   }
 }
 
+const Links = () => (
+  <div>
+    <h2>Links</h2>
+  </div>
+)
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props => (
+      getCurrentUser()
+        ? <Component {...props} />
+        : <Redirect to='/components-demo' />
+    )}
+  />
+)
+
+// Styled components
 const Main = styled.div`
   grid-area: main;
   min-height: 100vh;
@@ -42,9 +64,3 @@ const Container = styled.div`
     "header header"
     "nav main";
 `
-
-const Links = () => (
-  <div>
-    <h2>Links</h2>
-  </div>
-)
