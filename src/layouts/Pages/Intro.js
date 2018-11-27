@@ -25,7 +25,7 @@ const ListedSection = props => (
       <h1>{props.header}</h1>
       <ul>
         {props.list.map(({ name }) => (
-          <li>{name}</li>
+          <li key={name}>{name}</li>
         ))}
       </ul>
     </div>

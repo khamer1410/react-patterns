@@ -4,16 +4,10 @@ import styled from 'styled-components'
 import 'style/App.css'
 import { Navbar } from "layouts/Navbar"
 import { Header } from 'layouts/Header'
-import NotFound from 'components/NotFound'
-import LoginPage from 'components/Login'
-import Intro from 'layouts/Pages/Intro'
-import DemoPage from 'layouts/Pages/componentsDemo/DemoPage'
-import PrivateSection from 'layouts/Pages/PrivateSection'
-import ConditionalRendering from 'layouts/Pages/ConditionalRendering'
+
 import { getCurrentUser } from 'utils/authentication'
+import routes from 'config/routes'
 
-
-// TODO: move routes to separate config
 export default class App extends Component {
   render() {
     return (
@@ -22,13 +16,11 @@ export default class App extends Component {
         <Navbar />
         <Main>
           <Switch>
-            <Route exact path='/' component={Intro} />
-            <Route path='/components-demo' component={DemoPage} />
-            <Route path='/conditional-rendering' component={ConditionalRendering} />
-            <Route path='/login' component={LoginPage} />
-            <PrivateRoute path='/private' component={PrivateSection} />
-            {/* 404# scenarios */}
-            <Route component={NotFound} />
+            {routes.map(({ privateRoute, name, ...props }) => (
+              privateRoute
+                ? <PrivateRoute {...props} key={name} />
+                : <Route {...props} key={name} />
+            ))}
           </Switch>
         </Main>
       </Container>
@@ -36,13 +28,13 @@ export default class App extends Component {
   }
 }
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
+const PrivateRoute = ({ component: Component, redirect, ...rest }) => (
   <Route
     {...rest}
     render={props => (
       getCurrentUser()
         ? <Component {...props} />
-        : <Redirect to='/login' />
+        : <Redirect to={redirect} />
     )}
   />
 )
