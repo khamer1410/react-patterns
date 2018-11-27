@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-export const LoginButton = styled.button`
+export const CircleButton = styled.button`
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -48,6 +48,4 @@ export const Button = styled.button`
     transform: translateY(4px);
     background-position: 0 -60px;
   }
-}
-
 `
