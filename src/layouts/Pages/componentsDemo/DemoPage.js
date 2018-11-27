@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ModalPage from 'layouts/componentsDemo/ModalPage'
+import ModalPage from 'layouts/Pages/componentsDemo/ModalPage'
 
 const DemoPage = () => (
   <div>

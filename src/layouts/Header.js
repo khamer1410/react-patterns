@@ -4,7 +4,9 @@ import styled from 'styled-components'
 import 'style/App.css'
 
 import { LoginButton } from 'components/Buttons'
-import HeaderModal from 'layouts/HeaderModal'
+import { Modal } from 'components/Modal'
+import LoginPage from 'components/Login'
+
 export class Header extends Component {
   state = {
     isHeaderModalOpen: false
@@ -26,10 +28,13 @@ export class Header extends Component {
         <LoginButton onClick={this.toggleModal}>
           Log in
         </LoginButton>
-        <HeaderModal
+        <Modal
+          header={<h1>Login page</h1>}
           show={isHeaderModalOpen}
           onClose={this.toggleModal}
-        />
+        >
+          <LoginPage callback={this.toggleModal} />
+        </Modal>
       </Wrapper>);
   }
 }

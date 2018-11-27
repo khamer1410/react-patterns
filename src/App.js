@@ -4,9 +4,12 @@ import styled from 'styled-components'
 import 'style/App.css'
 import { Navbar } from "layouts/Navbar"
 import { Header } from 'layouts/Header'
-import DemoPage from 'layouts/componentsDemo/DemoPage'
 import NotFound from 'components/NotFound'
-import ConditionalRendering from 'layouts/ConditionalRendering'
+import LoginPage from 'components/Login'
+import Intro from 'layouts/Pages/Intro'
+import DemoPage from 'layouts/Pages/componentsDemo/DemoPage'
+import PrivateSection from 'layouts/Pages/PrivateSection'
+import ConditionalRendering from 'layouts/Pages/ConditionalRendering'
 import { getCurrentUser } from 'utils/authentication'
 
 
@@ -19,10 +22,11 @@ export default class App extends Component {
         <Navbar />
         <Main>
           <Switch>
-            <Route exact path='/' component={Links} />
+            <Route exact path='/' component={Intro} />
             <Route path='/components-demo' component={DemoPage} />
             <Route path='/conditional-rendering' component={ConditionalRendering} />
-            <PrivateRoute path='/private' component={NotFound} />
+            <Route path='/login' component={LoginPage} />
+            <PrivateRoute path='/private' component={PrivateSection} />
             {/* 404# scenarios */}
             <Route component={NotFound} />
           </Switch>
@@ -32,19 +36,13 @@ export default class App extends Component {
   }
 }
 
-const Links = () => (
-  <div>
-    <h2>Links</h2>
-  </div>
-)
-
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props => (
       getCurrentUser()
         ? <Component {...props} />
-        : <Redirect to='/components-demo' />
+        : <Redirect to='/login' />
     )}
   />
 )

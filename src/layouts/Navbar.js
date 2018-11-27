@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
-export const Navbar = props => (
+export const Navbar = () => (
   <Wrapper>
     <StyledNav>
       <li>
-        <Link to='/links'>Links</Link>
+        <Link to='/'>Intro</Link>
       </li>
       <li>
         <Link to='/components-demo'>Components demo</Link>
