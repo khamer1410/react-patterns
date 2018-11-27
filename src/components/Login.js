@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 import { login } from 'utils/authentication'
+import { Button } from 'components/Buttons'
 
 export const LoginPage = props => {
   const loginBtnHandler = () => {
@@ -13,9 +14,9 @@ export const LoginPage = props => {
     <Wrapper {...props}>
       <p>Please log in to see extended content</p>
 
-      <button onClick={loginBtnHandler}>
+      <Button onClick={loginBtnHandler}>
         Login
-      </button>
+      </Button>
     </Wrapper>
   )
 }

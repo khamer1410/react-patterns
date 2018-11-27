@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal } from 'components/Modal'
-
+import { Button } from 'components/Buttons'
 export default class ModalPage extends React.Component {
   state = {
     show: false,
@@ -16,7 +16,7 @@ export default class ModalPage extends React.Component {
     const { show } = this.state
     return (
       <div>
-        <button onClick={this.toggleModal}>Show Modal</button>
+        <Button onClick={this.toggleModal}>Show Modal</Button>
         <Modal
           show={show}
           header={<h1>Fancy Header</h1>}
