@@ -5,13 +5,16 @@ import { BrowserRouter as Router } from "react-router-dom"
 
 import App from 'App'
 import { GlobalStyles } from 'style/globalStyles'
+import ThemeProvider from "utils/ThemeProvider";
 
 const AppContainer = () => (
   <Fragment>
-    <GlobalStyles />
-    <Router>
-      <App />
-    </Router>
+    <ThemeProvider>
+      <GlobalStyles />
+      <Router>
+        <App />
+      </Router>
+    </ThemeProvider>
   </Fragment>
 )
 

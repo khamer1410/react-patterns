@@ -7,7 +7,10 @@ import { CircleButton } from 'components/Buttons'
 import { Modal } from 'components/Modal'
 import LoginPage from 'components/Login'
 import { getCurrentUser, logout } from 'utils/authentication'
-export class Header extends Component {
+import { WithThemeConsumer } from "utils/ThemeProvider";
+import { THEME_CLASSIC, THEME_MODERN } from 'config/const'
+
+class Header extends Component {
   state = {
     isHeaderModalOpen: false,
     isUserLogged: false,
@@ -36,6 +39,14 @@ export class Header extends Component {
     })
   }
 
+  switchTheme = () => {
+    const { theme, setTheme } = this.props
+
+    const newTheme = theme === THEME_CLASSIC ? THEME_MODERN : THEME_CLASSIC
+
+    setTheme(newTheme)
+  }
+
   render() {
     const { isHeaderModalOpen } = this.state
 
@@ -43,6 +54,11 @@ export class Header extends Component {
       <Wrapper>
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">Welcome to React patterns playground</h1>
+        <label htmlFor="themeSwitch">
+          Switch Theme
+          <input type="checkbox" name="themeSwitch" id="themeSwitch" onClick={this.switchTheme} />
+        </label>
+
         {this.state.isUserLogged
           ? <CircleButton onClick={this.logoutUser} children='Log out' />
           : <CircleButton onClick={this.toggleModal} children='Log in' />
@@ -58,6 +74,8 @@ export class Header extends Component {
   }
 }
 
+export default WithThemeConsumer(Header)
+
 const Wrapper = styled.header`
   grid-area: header;
   display: flex;
@@ -67,4 +85,3 @@ const Wrapper = styled.header`
   padding: 10px;
   color: white;
 `
-

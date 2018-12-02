@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Transition from 'react-transition-group/Transition';
 
-const duration = 300;
+const FADE_DURATION = 300;
 
 const defaultStyle = {
-  transition: `opacity ${duration}ms`,
+  transition: `opacity ${FADE_DURATION}ms`,
   opacity: 0,
 };
 
@@ -43,7 +43,7 @@ export class Modal extends Component {
     const { show, onClose, header, children, ...props } = this.props;
 
     return createPortal(
-      <Transition in={show} mountOnEnter unmountOnExit timeout={duration}>
+      <Transition in={show} mountOnEnter unmountOnExit timeout={FADE_DURATION}>
         {state => (
           <ModalBackground onClick={this.handleBackgroundClick} style={{ ...defaultStyle, ...transitionStyles[state] }}>
             <ModalContent {...props}>

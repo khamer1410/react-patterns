@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Route, Switch, Redirect } from "react-router-dom"
 import styled from 'styled-components'
 import 'style/App.css'
-import { Navbar } from "layouts/Navbar"
-import { Header } from 'layouts/Header'
+import Navbar from 'layouts/Navbar'
+import Header from 'layouts/Header'
 
 import { getCurrentUser } from 'utils/authentication'
 import routes from 'config/routes'
