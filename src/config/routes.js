@@ -1,9 +1,10 @@
 import NotFound from 'layouts/Pages/NotFound'
-import LoginPage from 'components/Login'
+import LoginPage from 'layouts/Pages/Login'
 import Intro from 'layouts/Pages/Intro'
 import DemoPage from 'layouts/Pages/componentsDemo/DemoPage'
 import PrivateSection from 'layouts/Pages/PrivateSection'
 import ConditionalRendering from 'layouts/Pages/ConditionalRendering'
+import ContainerPage from 'layouts/Pages/container-presenter/Container';
 
 export const routes = [
   {
@@ -21,6 +22,11 @@ export const routes = [
     name: 'Conditional Rendering',
     path: '/conditional-rendering',
     component: ConditionalRendering,
+  },
+  {
+    name: 'Container/Presenter',
+    path: '/container-presenter',
+    component: ContainerPage,
   },
   {
     name: 'Login page',

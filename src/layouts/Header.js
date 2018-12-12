@@ -5,7 +5,7 @@ import 'style/App.css'
 
 import { CircleButton } from 'components/Buttons'
 import { Modal } from 'components/Modal'
-import LoginPage from 'components/Login'
+import LoginPage from 'layouts/Pages/Login'
 import { getCurrentUser, logout } from 'utils/authentication'
 import { WithThemeConsumer } from "utils/ThemeProvider";
 import { THEME_CLASSIC, THEME_MODERN } from 'config/const'

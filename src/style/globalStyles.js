@@ -4,8 +4,8 @@ import { ThemeConsumer } from "utils/ThemeProvider";
 import { THEME_CLASSIC, THEME_MODERN } from 'config/const'
 
 const themeFonts = {
-  [THEME_CLASSIC]: 'sans-serif',
-  [THEME_MODERN]: 'courier'
+  [THEME_CLASSIC]: 'Century',
+  [THEME_MODERN]: 'sans-serif',
 }
 
 export const GlobalStyles = () => (

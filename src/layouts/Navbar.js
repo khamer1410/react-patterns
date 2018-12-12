@@ -1,28 +1,31 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
+import routes from 'config/routes'
+import { LinksNames } from 'config/const'
 
-export const Navbar = () => (
-  <Wrapper>
-    <StyledNav>
-      <li>
-        <Link to='/'>Intro</Link>
-      </li>
-      <li>
-        <Link to='/components-demo'>Components demo</Link>
-      </li>
-      <li>
-        <Link to='/conditional-rendering'>Conditional rendering</Link>
-      </li>
-      <li>
-        <Link to='/private'>Private route</Link>
-      </li>
-      <li>
-        <Link to='/404'>Not Found</Link>
-      </li>
-    </StyledNav>
-  </Wrapper>
-)
+export const Navbar = () => {
+  const NavbarLinks = routes.filter(route => LinksNames.find(name => name === route.name))
+
+  return (
+    <Wrapper>
+      <StyledNav>
+        {NavbarLinks.map(link => {
+          return (
+            <StyledLink key={link.name}>
+              <Link to={link.path}>{link.name}</Link>
+            </StyledLink>
+          )
+        })
+        }
+        {/** Add dummy path for not found scenario */}
+        <StyledLink>
+          <Link to='/404'>Not Found</Link>
+        </StyledLink>
+      </StyledNav>
+    </Wrapper>
+  )
+}
 
 export default Navbar
 
@@ -34,12 +37,13 @@ const Wrapper = styled.div`
 
 const StyledNav = styled.ul`
   padding: 0;
-  li {
+`
+const StyledLink = styled.li`
     list-style: none;
     padding: 15px 0;
-  }
-  li a {
-    color: rgba(0,0,0, 0.4);
+
+  a {
+    color: ${({ isActive }) => isActive ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.4)'};
     cursor: pointer;
     text-align: left;
     display: block;
@@ -54,4 +58,4 @@ const StyledNav = styled.ul`
       color: rgba(0,0,0, 0.8);
     }
   }
-`
+`;
