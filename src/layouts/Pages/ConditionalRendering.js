@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { Button } from 'components/Buttons';
 
 export default class ConditionalRendering extends Component {
   state = {
@@ -17,11 +18,11 @@ export default class ConditionalRendering extends Component {
     return (
       <Fragment>
         <div>
-          <button
+          <Button
             onClick={this.toggleState}
           >
-            Toggle state
-          </button>
+            Toggle mood
+          </Button>
         </div>
         <hr />
 
@@ -72,9 +73,9 @@ const StatusPresenter = ({ isOpen }) => {
 }
 
 // HOC boilerplate
-const Open = () => <p>OPEN</p>
+const Open = () => <p><span role='img' aria-label=''>😈</span> PARTY <span role='img' aria-label=''>😈</span></p>
 
-const Closed = () => <p>CLOSED</p>
+const Closed = () => <p><span role='img' aria-label=''>😎</span> CHILL <span role='img' aria-label=''>😎</span></p>
 
 const HOC = (firstComponent, secondComponent) => condition => props => {
   return condition ? firstComponent(props) : secondComponent(props)

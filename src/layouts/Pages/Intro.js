@@ -33,8 +33,9 @@ const ListedSection = props => (
 )
 
 const runItems = [
-  { name: 'ContextAPI', done: false },
+  { name: 'Design', done: false },
   { name: 'Hooks', done: false },
+  { name: 'ContextAPI', done: false },
   { name: 'HOC pattern', done: false },
 ]
 
