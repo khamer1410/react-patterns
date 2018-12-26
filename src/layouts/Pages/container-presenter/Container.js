@@ -8,7 +8,7 @@ export default class ContainerPage extends Component {
   state = {
     movies: [],
     loading: true,
-    error: false,
+    error: null,
   }
 
   componentDidMount() {
@@ -16,8 +16,8 @@ export default class ContainerPage extends Component {
       .then(({ data }) => {
         this.setState({ movies: data.results })
       })
-      .catch(() => {
-        this.setState({ error: true })
+      .catch(error => {
+        this.setState({ error: error })
       })
       .finally(() => {
         this.setState({ loading: false })
@@ -48,7 +48,13 @@ export default class ContainerPage extends Component {
     }
 
     if (error) {
-      return <div>Something went wrong! Try again later</div>
+      return (
+        <div>
+          <p>Something went wrong!</p> <br />
+          <code>{error.message}</code> <br />
+          <p>Try again later</p>
+        </div>
+      )
     }
 
     return (
