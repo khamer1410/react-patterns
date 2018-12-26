@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import 'style/App.css'
 import Navbar from 'layouts/Navbar'
 import Header from 'layouts/Header'
+import background from 'assets/blue-blank.jpg'
 
 import { getCurrentUser } from 'utils/authentication'
 import routes from 'config/routes'
@@ -44,7 +45,8 @@ const Main = styled.div`
   grid-area: main;
   min-height: 100vh;
   padding: 10px;
-  background: silver;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(${background});
+  background-size: cover;
 `
 
 const Container = styled.div`

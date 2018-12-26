@@ -33,7 +33,7 @@ export const Button = styled.button`
   cursor: pointer;
   outline: none;
 
-  background-color: #00cbff;
+  background-color: #084c5d;
   background-image: linear-gradient(to bottom,rgba(255,255,255,0.4),rgba(255,255,255,0));
   background-repeat: no-repeat;
   box-shadow: 0 5px 10px 0 rgba(0,0,0,0.3);
