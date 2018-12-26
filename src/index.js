@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import registerServiceWorker from './registerServiceWorker'
 import { BrowserRouter as Router } from "react-router-dom"
@@ -8,14 +8,14 @@ import { GlobalStyles } from 'style/globalStyles'
 import ThemeProvider from "utils/ThemeProvider";
 
 const AppContainer = () => (
-  <Fragment>
+  <>
     <ThemeProvider>
       <GlobalStyles />
       <Router>
         <App />
       </Router>
     </ThemeProvider>
-  </Fragment>
+  </>
 )
 
 

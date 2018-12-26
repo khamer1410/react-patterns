@@ -1,14 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 export const Intro = () => (
-  <Fragment>
+  <>
     <h1>React patterns roadmap</h1>
     <Wrapper>
       <ListedSection header='On the run!' list={runItems} />
       <ListedSection header='Backlog' list={backlogItems} />
     </Wrapper>
-  </Fragment>
+  </>
 )
 
 export default Intro

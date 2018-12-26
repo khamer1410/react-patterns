@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import styled from 'styled-components';
 
 const PrivateSection = props => (
-  <Fragment>
+  <>
     <h1>Congrats! Welcome to private page</h1>
     <p>As a reward You can see all component's props</p>
     <hr />
@@ -12,7 +12,7 @@ const PrivateSection = props => (
       </pre>
     </Board>
 
-  </Fragment>
+  </>
 )
 
 export default PrivateSection

@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from 'react'
-import { Button } from 'components/Buttons';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import { Button } from 'components/Buttons'
 
 export default class ConditionalRendering extends Component {
   state = {
@@ -16,7 +17,7 @@ export default class ConditionalRendering extends Component {
     const { isOpen } = this.state
 
     return (
-      <Fragment>
+      <>
         <div>
           <Button
             onClick={this.toggleState}
@@ -52,17 +53,23 @@ export default class ConditionalRendering extends Component {
         <ConditionalExample heading='HOC'>
           {withHOC(isOpen)(this.props)}
         </ConditionalExample>
-      </Fragment>
+      </>
     )
   }
 }
 
 const ConditionalExample = ({ heading, children }) => (
-  <div>
+  <FlexWrapper>
     <h2> {heading} </h2>
     {children}
-  </div>
+  </FlexWrapper>
 )
+
+const FlexWrapper = styled.div`
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+`
 
 const StatusPresenter = ({ isOpen }) => {
   let view = null;
