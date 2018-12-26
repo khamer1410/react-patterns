@@ -3,7 +3,7 @@ import LoginPage from 'layouts/Pages/Login'
 import Intro from 'layouts/Pages/Intro'
 import DemoPage from 'layouts/Pages/componentsDemo/DemoPage'
 import PrivateSection from 'layouts/Pages/PrivateSection'
-import ConditionalRendering from 'layouts/Pages/ConditionalRendering'
+import ConditionalRendering from 'layouts/Pages/conditionalRendering/ConditionalRendering'
 import ContainerPage from 'layouts/Pages/container-presenter/Container';
 
 export const routes = [
