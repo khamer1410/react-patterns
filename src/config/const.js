@@ -1,4 +1,11 @@
 export const THEME_CLASSIC = 'classic'
 export const THEME_MODERN = 'modern'
 
-export const LINKS_NAMES = ['Intro', 'Components demo', 'Conditional Rendering', 'Container/Presenter', 'Login page']
+export const NAV_ROUTES_ORDER = [
+  'Intro',
+  'Components demo',
+  'Conditional Rendering',
+  'Container/Presenter',
+  'Higher order component',
+  'Login page',
+]

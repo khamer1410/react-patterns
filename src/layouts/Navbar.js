@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 import routes from 'config/routes'
-import { LINKS_NAMES } from 'config/const'
+import { NAV_ROUTES_ORDER } from 'config/const'
 
 export const Navbar = () => {
-  const NavbarLinks = routes.filter(route => LINKS_NAMES.find(name => name === route.name))
+  const NavbarLinks = routes.filter(route => NAV_ROUTES_ORDER.find(name => name === route.name))
 
   return (
     <Wrapper>

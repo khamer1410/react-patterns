@@ -26,6 +26,7 @@ export const Button = styled.button`
   font-weight: 400;
   color: white;
   padding: 1em;
+  margin: ${({ margin }) => margin ? margin : 0};
   min-width: 300px;
 
   border-radius: 6px;
@@ -49,3 +50,6 @@ export const Button = styled.button`
     background-position: 0 -60px;
   }
 `
+Button.defaultProps = {
+  margin: '5px'
+}
