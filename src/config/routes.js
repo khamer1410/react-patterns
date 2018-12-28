@@ -6,6 +6,7 @@ import PrivateSection from 'layouts/Pages/PrivateSection'
 import ConditionalRendering from 'layouts/Pages/conditionalRendering/ConditionalRendering'
 import ContainerPage from 'layouts/Pages/container-presenter/Container'
 import HigherOrderComponentDemo from 'layouts/Pages/higherOrderComponent/HigherOrderComponent'
+import RenderPropsPage from 'layouts/Pages/renderProps/renderPropsPage'
 
 export const routes = [
   {
@@ -33,6 +34,11 @@ export const routes = [
     name: 'Higher order component',
     path: '/hoc',
     component: HigherOrderComponentDemo,
+  },
+  {
+    name: 'Render props',
+    path: '/render-props',
+    component: RenderPropsPage,
   },
   {
     name: 'Login page',
