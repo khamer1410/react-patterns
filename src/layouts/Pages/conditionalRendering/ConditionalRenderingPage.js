@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Button } from 'components/Buttons'
 
-export default class ConditionalRendering extends Component {
+export default class ConditionalRenderingPage extends Component {
   state = {
     isOpen: false,
   }

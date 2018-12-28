@@ -9,7 +9,7 @@ import DataPresenter from 'layouts/Pages/higherOrderComponent/DataPresenter'
 // add HOC for presentational component
 const EnhancedDataPresenter = compose(withStatusPresenter, WithThemeConsumer)(DataPresenter)
 
-class HigherOrderComponentDemo extends Component {
+class HigherOrderComponentDemoPage extends Component {
   state = {
     error: null,
     loading: false,
@@ -55,4 +55,4 @@ class HigherOrderComponentDemo extends Component {
   }
 }
 
-export default HigherOrderComponentDemo
+export default HigherOrderComponentDemoPage

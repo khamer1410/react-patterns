@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 
 const SECONDS_TO_REDIRECT = 10
 
-const NotFound = ({ location }) => {
+const NotFoundPage = ({ location }) => {
   const [count, setCount] = useState(SECONDS_TO_REDIRECT)
 
   const countdown = () => setCount(count - 1)
@@ -23,4 +23,4 @@ const NotFound = ({ location }) => {
   )
 }
 
-export default NotFound
+export default NotFoundPage

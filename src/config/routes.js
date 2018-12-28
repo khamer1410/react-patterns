@@ -1,18 +1,18 @@
-import NotFound from 'layouts/Pages/NotFound'
+import NotFoundPage from 'layouts/Pages/NotFoundPage'
 import LoginPage from 'layouts/Pages/Login'
-import Intro from 'layouts/Pages/Intro'
+import IntroPage from 'layouts/Pages/IntroPage'
 import DemoPage from 'layouts/Pages/componentsDemo/DemoPage'
 import PrivateSection from 'layouts/Pages/PrivateSection'
-import ConditionalRendering from 'layouts/Pages/conditionalRendering/ConditionalRendering'
+import ConditionalRenderingPage from 'layouts/Pages/conditionalRendering/ConditionalRenderingPage'
 import ContainerPage from 'layouts/Pages/container-presenter/Container'
-import HigherOrderComponentDemo from 'layouts/Pages/higherOrderComponent/HigherOrderComponent'
+import HigherOrderComponentDemoPage from 'layouts/Pages/higherOrderComponent/HigherOrderComponentPage'
 import RenderPropsPage from 'layouts/Pages/renderProps/renderPropsPage'
 
 export const routes = [
   {
     name: 'Intro',
     path: '/',
-    component: Intro,
+    component: IntroPage,
     exact: true
   },
   {
@@ -23,7 +23,7 @@ export const routes = [
   {
     name: 'Conditional Rendering',
     path: '/conditional-rendering',
-    component: ConditionalRendering,
+    component: ConditionalRenderingPage,
   },
   {
     name: 'Container/Presenter',
@@ -33,7 +33,7 @@ export const routes = [
   {
     name: 'Higher order component',
     path: '/hoc',
-    component: HigherOrderComponentDemo,
+    component: HigherOrderComponentDemoPage,
   },
   {
     name: 'Render props',
@@ -55,7 +55,7 @@ export const routes = [
   // 404# scenarios
   {
     name: 'Not found',
-    component: NotFound
+    component: NotFoundPage
   }
 ]
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Intro = () => (
+export const IntroPage = () => (
   <>
     <h1>React patterns roadmap</h1>
     <Wrapper>
@@ -11,7 +11,7 @@ export const Intro = () => (
   </>
 )
 
-export default Intro
+export default IntroPage
 
 const Wrapper = styled.div`
   display: flex;
