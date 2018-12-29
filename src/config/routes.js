@@ -6,7 +6,7 @@ import PrivateSection from 'layouts/Pages/PrivateSection'
 import ConditionalRenderingPage from 'layouts/Pages/conditionalRendering/ConditionalRenderingPage'
 import ContainerPage from 'layouts/Pages/container-presenter/Container'
 import HigherOrderComponentDemoPage from 'layouts/Pages/higherOrderComponent/HigherOrderComponentPage'
-import RenderPropsPage from 'layouts/Pages/renderProps/renderPropsPage'
+import RenderPropsPage from 'layouts/Pages/renderProps/RenderPropsPage'
 
 export const routes = [
   {
