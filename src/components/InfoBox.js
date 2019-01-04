@@ -27,16 +27,15 @@ InfoBox.propTypes = propTypes
 export default WithThemeConsumer(InfoBox)
 
 // styled components
+const backgroundByTheme = {
+  [THEME_CLASSIC]: 'linear-gradient(rgba(255,255,255, 0.5), rgba(60,167,208, 0.5))',
+  [THEME_MODERN]: 'linear-gradient(rgba(255,255,255, 0.5), rgba(245,0,0, 0.5))',
+}
+
 const InfoWrapper = styled.div`
   padding: 10px;
   border-radius: 10px;
-  background: ${({ theme }) => {
-    const backgroundByTheme = {
-      [THEME_CLASSIC]: 'linear-gradient(rgba(255,255,255, 0.5), rgba(60,167,208, 0.5))',
-      [THEME_MODERN]: 'linear-gradient(rgba(255,255,255, 0.5), rgba(245,0,0, 0.5))',
-    }
-    return backgroundByTheme[theme]
-  }};
+  background: ${({ theme }) => backgroundByTheme[theme]};
 `
 const Heading = styled.h4`
   margin: 0;
