@@ -1,18 +1,20 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router'
 import routes from 'config/routes'
 import { NAV_ROUTES_ORDER } from 'config/const'
 
-export const Navbar = () => {
+export const Navbar = ({ location }) => {
   const NavbarLinks = routes.filter(route => NAV_ROUTES_ORDER.find(name => name === route.name))
 
   return (
     <Wrapper>
       <StyledNav>
         {NavbarLinks.map(link => {
+          const isActive = link.path === location.pathname
           return (
-            <StyledLink key={link.name}>
+            <StyledLink key={link.name} isActive={isActive}>
               <Link to={link.path}>{link.name}</Link>
             </StyledLink>
           )
@@ -27,7 +29,7 @@ export const Navbar = () => {
   )
 }
 
-export default Navbar
+export default withRouter(Navbar)
 
 const Wrapper = styled.div`
   grid-area: nav;
