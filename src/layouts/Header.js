@@ -5,6 +5,7 @@ import 'style/App.css'
 
 import { CircleButton } from 'components/Buttons'
 import { Modal } from 'components/Modal'
+import { ToggleButton } from 'components/ToggleButton'
 import LoginPage from 'layouts/Pages/Login'
 import { getCurrentUser, logout } from 'utils/authentication'
 import { WithThemeConsumer } from "utils/ThemeProvider";
@@ -49,15 +50,21 @@ class Header extends Component {
 
   render() {
     const { isHeaderModalOpen } = this.state
+    const { theme } = this.props
+
+    const isClassicTheme = theme === THEME_CLASSIC
 
     return (
       <Wrapper>
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">Welcome to React patterns playground</h1>
-        <label htmlFor="themeSwitch">
-          Switch Theme
-          <input type="checkbox" name="themeSwitch" id="themeSwitch" onClick={this.switchTheme} />
-        </label>
+        <ToggleButton
+          onClick={this.switchTheme}
+          label='Switch theme'
+          name='theme-switcher'
+          id='theme-switcher'
+          isActive={!isClassicTheme}
+        />
 
         {this.state.isUserLogged
           ? <CircleButton onClick={this.logoutUser} children='Log out' />
