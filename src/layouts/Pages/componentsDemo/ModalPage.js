@@ -16,6 +16,7 @@ export default class ModalPage extends React.Component {
     const { show } = this.state
     return (
       <div>
+        <h3>Modal build on React Portal</h3>
         <Button onClick={this.toggleModal}>Show Modal</Button>
         <Modal
           show={show}
