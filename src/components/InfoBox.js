@@ -14,8 +14,8 @@ const propTypes = {
   theme: PropTypes.string,
 }
 
-const InfoBox = ({ title, children, theme }) => (
-  <InfoWrapper theme={theme}>
+const InfoBox = ({ title, children, theme, ...props }) => (
+  <InfoWrapper theme={theme} {...props}>
     {title && <Heading>{title}</Heading>}
     {children}
   </InfoWrapper>

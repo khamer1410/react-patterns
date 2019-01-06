@@ -26,7 +26,7 @@ export const routes = [
     component: ConditionalRenderingPage,
   },
   {
-    name: 'Container/Presenter',
+    name: 'Container / Presenter',
     path: '/container-presenter',
     component: ContainerPage,
   },
@@ -50,7 +50,7 @@ export const routes = [
     path: '/private',
     component: PrivateSection,
     privateRoute: true,
-    redirect: '/login'
+    redirect: '/login',
   },
   // 404# scenarios
   {

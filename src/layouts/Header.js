@@ -10,6 +10,7 @@ import { getCurrentUser, logout } from 'utils/authentication'
 import { WithThemeConsumer } from "utils/ThemeProvider"
 import { THEME_CLASSIC, THEME_MODERN } from 'config/const'
 
+// TODO: move logic to Header Container
 class Header extends Component {
   state = {
     isHeaderModalOpen: false,
