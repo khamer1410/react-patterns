@@ -10,3 +10,5 @@ export const NAV_ROUTES_ORDER = [
   'Render props',
   'Private section',
 ]
+
+export const ROUTER_BASE_PATH_NAME = '/react-patterns'
