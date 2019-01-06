@@ -7,7 +7,7 @@ import { Modal } from 'components/Modal'
 import { ToggleButton } from 'components/ToggleButton'
 import LoginPage from 'layouts/Pages/Login'
 import { getCurrentUser, logout } from 'utils/authentication'
-import { WithThemeConsumer } from "utils/ThemeProvider";
+import { WithThemeConsumer } from "utils/ThemeProvider"
 import { THEME_CLASSIC, THEME_MODERN } from 'config/const'
 
 class Header extends Component {
@@ -54,7 +54,7 @@ class Header extends Component {
     const isClassicTheme = theme === THEME_CLASSIC
 
     return (
-      <Wrapper>
+      <Wrapper theme={theme}>
         <Logo src={logo} alt="logo" />
         <Title>Welcome to React patterns playground</Title>
         <ToggleButton
@@ -87,10 +87,16 @@ const Wrapper = styled.header`
   display: flex;
   align-items: center;
   background-color: #222;
-  background: linear-gradient(45deg, #222 30%, #00cbff);
+  background: ${({ theme }) => headerBackgroundThemes[theme]};
   padding: 10px;
   color: white;
 `
+
+const headerBackgroundThemes = {
+  [THEME_CLASSIC]: 'linear-gradient(45deg, #222 30%, #00cbff)',
+  [THEME_MODERN]: 'linear-gradient(45deg, #c50000 30%, #222)'
+}
+
 const spin = keyframes`
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
