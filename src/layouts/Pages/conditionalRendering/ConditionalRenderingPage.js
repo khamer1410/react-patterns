@@ -80,9 +80,9 @@ const StatusPresenter = ({ isOpen }) => {
 }
 
 // HOC boilerplate
-const Open = () => <p><span role='img' aria-label=''>😈</span> PARTY <span role='img' aria-label=''>😈</span></p>
+const Open = () => <p><span role='img' aria-label='devil'>😈</span> PARTY <span role='img' aria-label='devil'>😈</span></p>
 
-const Closed = () => <p><span role='img' aria-label=''>😎</span> CHILL <span role='img' aria-label=''>😎</span></p>
+const Closed = () => <p><span role='img' aria-label='sunglasses'>😎</span> CHILL <span role='img' aria-label='sunglasses'>😎</span></p>
 
 const HOC = (firstComponent, secondComponent) => condition => props => {
   return condition ? firstComponent(props) : secondComponent(props)
