@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import logo from 'logo.svg'
-import styled from 'styled-components'
-import 'style/App.css'
+import styled, { keyframes } from 'styled-components'
 
 import { CircleButton } from 'components/Buttons'
 import { Modal } from 'components/Modal'
@@ -56,8 +55,8 @@ class Header extends Component {
 
     return (
       <Wrapper>
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Welcome to React patterns playground</h1>
+        <Logo src={logo} alt="logo" />
+        <Title>Welcome to React patterns playground</Title>
         <ToggleButton
           onClick={this.switchTheme}
           label='Switch theme'
@@ -91,4 +90,16 @@ const Wrapper = styled.header`
   background: linear-gradient(45deg, #222 30%, #00cbff);
   padding: 10px;
   color: white;
+`
+const spin = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`
+const Logo = styled.img`
+  animation: ${spin} infinite 20s linear;
+  height: 70px;
+`
+const Title = styled.h1`
+  flex: 1;
+  font-size: 1.5em;
 `

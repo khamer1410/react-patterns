@@ -22,7 +22,7 @@ export const Navbar = ({ location }) => {
         }
         {/** Add dummy path for not found scenario */}
         <StyledLink>
-          <Link to='/404'>Not Found</Link>
+          <Link to='/404'>Not Found Page with React Hooks <span role='img' aria-label='fire'>🔥</span></Link>
         </StyledLink>
       </StyledNav>
     </Wrapper>
