@@ -1,7 +1,7 @@
 # REACT PATTERNS
 CRA based project to test and experiment with react patterns & API.
 
-[React Patterns LIVE DEMO - click here](https://github.com/khamer1410/react-patterns)
+[React Patterns LIVE DEMO - click here](https://khamer1410.github.io/react-patterns/)
 
 
 This site was created to have a build-from-scratch playground for React & React tools.
