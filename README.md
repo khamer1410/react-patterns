@@ -1,20 +1,17 @@
 # REACT PATTERNS
 CRA based project to test and experiment with react patterns & API.
 
-## DONE list:
-- React Router
-- Modal component in React Portal
+[React Patterns LIVE DEMO - click here](https://github.com/khamer1410/react-patterns)
 
-## TODO list:
-- container / components with redux & context api
-- HOC
-- render props
-- styling with StyledComponents
-- conditionals
-- grid layout
+
+This site was created to have a build-from-scratch playground for React & React tools.
+By this approach, I can test new features or try some more complex patterns isolated, outside of a commercial project.
+No need to worry about dependencies, complexity - this is an easily customizable playground for React.
+It's (and probably always will be, as React is evolving) ongoing project - planned features and used technologies are listed on intro page.
 
 
 -------------------------------
+## default CRA Readme below
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

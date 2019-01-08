@@ -4,7 +4,7 @@ import Infobox from 'components/InfoBox';
 
 export const IntroPage = () => (
   <>
-    <h1>React patterns roadmap</h1>
+    <h1>React patterns</h1>
     <Infobox>
       <span>
         <p>This site was created to have a build-from-scratch playground for React & React tools.</p>
