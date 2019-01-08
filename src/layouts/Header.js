@@ -11,6 +11,7 @@ import { WithThemeConsumer } from "utils/ThemeProvider"
 import { THEME_CLASSIC, THEME_MODERN } from 'config/const'
 
 // TODO: move logic to Header Container
+// TODO: move logged user status to redux
 class Header extends Component {
   state = {
     isHeaderModalOpen: false,

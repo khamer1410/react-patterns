@@ -4,17 +4,19 @@ import styled from 'styled-components'
 import { login } from 'utils/authentication'
 import { Button } from 'components/Buttons'
 
-export const LoginPage = props => {
-  const loginBtnHandler = () => {
+export const LoginPage = ({ location, history, callback, ...props }) => {
+  const redirect = location && location.state && location.state.from
+
+  const loginClickHandler = () => {
     login()
-    props.callback && props.callback()
+    redirect && history.push(redirect)
+    callback && callback()
   }
 
   return (
     <Wrapper {...props}>
       <p>Please log in to see extended content</p>
-
-      <Button onClick={loginBtnHandler}>
+      <Button onClick={loginClickHandler}>
         Login
       </Button>
     </Wrapper>

@@ -34,7 +34,10 @@ const PrivateRoute = ({ component: Component, redirect, ...rest }) => (
     render={props => (
       getCurrentUser()
         ? <Component {...props} />
-        : <Redirect to={redirect} />
+        : <Redirect to={{
+          pathname: redirect,
+          state: { from: props.location }
+        }} />
     )}
   />
 )

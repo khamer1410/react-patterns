@@ -8,7 +8,7 @@ export const IntroPage = () => (
     <Infobox>
       <span>
         <p>This site was created to have a build-from-scratch playground for React & React tools.</p>
-        <p>By this approach You can test new features or try some more complex patterns isolated, outside of your commercial project.</p>
+        <p>By this approach, I can test new features or try some more complex patterns isolated, outside of a commercial project.</p>
         <p>No need to worry about dependencies, complexity - this is an easily customizable playground for React.</p>
         <p>It's (and probably always will be, as React is evolving) ongoing project - planned features and used technologies are listed below.</p>
       </span>
@@ -47,12 +47,13 @@ const ListedSection = props => (
 )
 
 const tasks = [
-  { name: 'Improve design, add Material-design', done: false },
+  { name: 'Improve design, add Material-design, add RWD', done: false },
   { name: 'Add Redux + Middleware', done: false },
   { name: 'Add React Utils section (lazy, memo, suspense, didCatch)', done: false },
   { name: 'Add CompoundComponent pattern', done: false },
   { name: 'Use service workers', done: false },
   { name: 'Use advanced Hooks patterns', done: false },
+  { name: 'Add tests', done: false },
 ]
 
 const JSitems = [
