@@ -1,6 +1,6 @@
 {
-  "main.js": "/react-patterns/static/js/main.5063ab6f.chunk.js",
-  "main.js.map": "/react-patterns/static/js/main.5063ab6f.chunk.js.map",
+  "main.js": "/react-patterns/static/js/main.3fc0e6eb.chunk.js",
+  "main.js.map": "/react-patterns/static/js/main.3fc0e6eb.chunk.js.map",
   "static/js/1.a5184e61.chunk.js": "/react-patterns/static/js/1.a5184e61.chunk.js",
   "static/js/1.a5184e61.chunk.js.map": "/react-patterns/static/js/1.a5184e61.chunk.js.map",
   "runtime~main.js": "/react-patterns/static/js/runtime~main.3d104213.js",
@@ -9,6 +9,6 @@
   "static/media/dark-background.jpg": "/react-patterns/static/media/dark-background.ff707295.jpg",
   "static/media/blue-blank.jpg": "/react-patterns/static/media/blue-blank.abd9dc54.jpg",
   "index.html": "/react-patterns/index.html",
-  "precache-manifest.9b57229861d140e5f8536611011b7273.js": "/react-patterns/precache-manifest.9b57229861d140e5f8536611011b7273.js",
+  "precache-manifest.e89a97e5a3e5c2c0be11b2d67055fca0.js": "/react-patterns/precache-manifest.e89a97e5a3e5c2c0be11b2d67055fca0.js",
   "service-worker.js": "/react-patterns/service-worker.js"
 }
