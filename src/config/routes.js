@@ -7,6 +7,7 @@ import ConditionalRenderingPage from 'layouts/Pages/conditionalRendering/Conditi
 import ContainerPage from 'layouts/Pages/container-presenter/Container'
 import HigherOrderComponentDemoPage from 'layouts/Pages/higherOrderComponent/HigherOrderComponentPage'
 import RenderPropsPage from 'layouts/Pages/renderProps/RenderPropsPage'
+import ReduxPage from 'layouts/Pages/redux/ReduxPage';
 
 export const routes = [
   {
@@ -39,6 +40,11 @@ export const routes = [
     name: 'Render props',
     path: '/render-props',
     component: RenderPropsPage,
+  },
+  {
+    name: 'Redux',
+    path: '/redux',
+    component: ReduxPage,
   },
   {
     name: 'Login page',

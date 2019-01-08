@@ -8,6 +8,7 @@ export const NAV_ROUTES_ORDER = [
   'Container / Presenter',
   'Higher order component',
   'Render props',
+  'Redux',
   'Private section',
 ]
 
