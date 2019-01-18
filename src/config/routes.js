@@ -8,6 +8,7 @@ import ContainerPage from 'layouts/Pages/container-presenter/Container'
 import HigherOrderComponentDemoPage from 'layouts/Pages/higherOrderComponent/HigherOrderComponentPage'
 import RenderPropsPage from 'layouts/Pages/renderProps/RenderPropsPage'
 import ReduxPage from 'layouts/Pages/redux/ReduxPage';
+import ReactUtilsPage from 'layouts/Pages/reactUtils/reactUtilsPage';
 
 export const routes = [
   {
@@ -20,6 +21,11 @@ export const routes = [
     name: 'Components demo',
     path: '/components-demo',
     component: DemoPage,
+  },
+  {
+    name: 'React utils',
+    path: '/utils',
+    component: ReactUtilsPage,
   },
   {
     name: 'Conditional Rendering',

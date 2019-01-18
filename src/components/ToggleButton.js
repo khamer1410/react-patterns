@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const propTypes = {
   label: PropTypes.string,
   onClick: PropTypes.func,
-  isActive: PropTypes.bool,
+  isActive: PropTypes.bool.isRequired,
   className: PropTypes.string,
   name: PropTypes.string,
   id: PropTypes.string,

@@ -4,6 +4,7 @@ export const THEME_MODERN = 'modern'
 export const NAV_ROUTES_ORDER = [
   'Intro',
   'Components demo',
+  'React utils',
   'Conditional Rendering',
   'Container / Presenter',
   'Higher order component',
