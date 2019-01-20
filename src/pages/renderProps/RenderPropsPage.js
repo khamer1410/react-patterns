@@ -1,5 +1,5 @@
 import React from 'react'
-import Amount from 'layouts/Pages/renderProps/Amount'
+import Amount from 'pages/renderProps/Amount'
 import InfoBox from 'components/InfoBox'
 
 const RenderPropsPage = () => {

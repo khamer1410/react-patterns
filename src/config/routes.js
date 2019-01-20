@@ -1,14 +1,14 @@
-import NotFoundPage from 'layouts/Pages/NotFoundPage'
-import LoginPage from 'layouts/Pages/Login'
-import IntroPage from 'layouts/Pages/IntroPage'
-import DemoPage from 'layouts/Pages/componentsDemo/DemoPage'
-import PrivateSection from 'layouts/Pages/PrivateSection'
-import ConditionalRenderingPage from 'layouts/Pages/conditionalRendering/ConditionalRenderingPage'
-import ContainerPage from 'layouts/Pages/container-presenter/Container'
-import HigherOrderComponentDemoPage from 'layouts/Pages/higherOrderComponent/HigherOrderComponentPage'
-import RenderPropsPage from 'layouts/Pages/renderProps/RenderPropsPage'
-import ReduxPage from 'layouts/Pages/redux/ReduxPage';
-import ReactUtilsPage from 'layouts/Pages/reactUtils/reactUtilsPage';
+import NotFoundPage from 'pages/NotFoundPage'
+import LoginPage from 'pages/Login'
+import IntroPage from 'pages/IntroPage'
+import DemoPage from 'pages/componentsDemo/DemoPage'
+import PrivateSection from 'pages/PrivateSection'
+import ConditionalRenderingPage from 'pages/conditionalRendering/ConditionalRenderingPage'
+import ContainerPage from 'pages/container-presenter/Container'
+import HigherOrderComponentDemoPage from 'pages/higherOrderComponent/HigherOrderComponentPage'
+import RenderPropsPage from 'pages/renderProps/RenderPropsPage'
+import ReduxPage from 'pages/redux/ReduxPage';
+import ReactUtilsPage from 'pages/reactUtils/reactUtilsPage';
 
 export const routes = [
   {

@@ -5,7 +5,7 @@ import styled, { keyframes } from 'styled-components'
 import { CircleButton } from 'components/Buttons'
 import { Modal } from 'components/Modal'
 import { ToggleButton } from 'components/ToggleButton'
-import LoginPage from 'layouts/Pages/Login'
+import LoginPage from 'pages/Login'
 import { getCurrentUser, logout } from 'utils/authentication'
 import { WithThemeConsumer } from "utils/ThemeProvider"
 import { THEME_CLASSIC, THEME_MODERN } from 'config/const'

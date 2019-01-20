@@ -2,7 +2,7 @@
 import { applyMiddleware, createStore, combineReducers, compose } from 'redux'
 // eslint-disable-next-line
 import thunk from 'redux-thunk'
-import counterReducer from 'layouts/Pages/redux/reduxReducers'
+import counterReducer from 'pages/redux/reduxReducers'
 
 const reducer = combineReducers({
   counter: counterReducer

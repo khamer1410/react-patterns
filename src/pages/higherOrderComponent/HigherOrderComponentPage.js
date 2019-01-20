@@ -4,7 +4,7 @@ import { Button } from 'components/Buttons'
 import withStatusPresenter from './withStatusPresenter'
 import { WithThemeConsumer } from 'utils/ThemeProvider'
 import { compose } from 'redux'
-import DataPresenter from 'layouts/Pages/higherOrderComponent/DataPresenter'
+import DataPresenter from 'pages/higherOrderComponent/DataPresenter'
 
 // add HOC for presentational component
 const EnhancedDataPresenter = compose(withStatusPresenter, WithThemeConsumer)(DataPresenter)

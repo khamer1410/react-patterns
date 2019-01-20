@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NotFoundPage from 'layouts/Pages/NotFoundPage';
+import NotFoundPage from 'pages/NotFoundPage';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
