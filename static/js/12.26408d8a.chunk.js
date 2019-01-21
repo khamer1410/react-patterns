@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{97:function(e,n,t){"use strict";t.r(n);var a=t(0),l=t.n(a);n.default=function(){return l.a.createElement("div",null,l.a.createElement("h2",null,"I was lazy rendered"),l.a.createElement("p",null,"lazy components are fetched just when they needs to be render. This help saving 'general bundle' size. "))}}}]);
+//# sourceMappingURL=12.26408d8a.chunk.js.map
