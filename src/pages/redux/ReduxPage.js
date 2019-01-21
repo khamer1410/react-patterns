@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components';
-import { increaseCount, decreaseCount, setCount } from './reduxReducers'
+import { increaseCount, decreaseCount, setCount } from './ReduxReducers'
 import InfoBox from 'components/InfoBox'
 
 class ReduxPage extends Component {
