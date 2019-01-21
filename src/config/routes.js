@@ -1,14 +1,16 @@
-import NotFoundPage from 'pages/NotFoundPage'
-import LoginPage from 'pages/Login'
-import IntroPage from 'pages/IntroPage'
-import DemoPage from 'pages/componentsDemo/DemoPage'
-import PrivateSection from 'pages/PrivateSection'
-import ConditionalRenderingPage from 'pages/conditionalRendering/ConditionalRenderingPage'
-import ContainerPage from 'pages/container-presenter/Container'
-import HigherOrderComponentDemoPage from 'pages/higherOrderComponent/HigherOrderComponentPage'
-import RenderPropsPage from 'pages/renderProps/RenderPropsPage'
-import ReduxPage from 'pages/redux/ReduxPage';
-import ReactUtilsPage from 'pages/reactUtils/reactUtilsPage';
+import { lazy } from 'react'
+
+const NotFoundPage = lazy(()=> import('pages/NotFoundPage'))
+const LoginPage = lazy(()=> import('pages/Login'))
+const IntroPage = lazy(()=> import('pages/IntroPage'))
+const DemoPage = lazy(()=> import('pages/componentsDemo/DemoPage'))
+const PrivateSection = lazy(()=> import('pages/PrivateSection'))
+const ConditionalRenderingPage = lazy(()=> import('pages/conditionalRendering/ConditionalRenderingPage'))
+const ContainerPage = lazy(()=> import('pages/container-presenter/Container'))
+const HigherOrderComponentDemoPage = lazy(()=> import('pages/higherOrderComponent/HigherOrderComponentPage'))
+const RenderPropsPage = lazy(()=> import('pages/renderProps/RenderPropsPage'))
+const ReduxPage = lazy(()=> import('pages/redux/ReduxPage'))
+const ReactUtilsPage = lazy(()=> import('pages/reactUtils/ReactUtilsPage'))
 
 export const routes = [
   {

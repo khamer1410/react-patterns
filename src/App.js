@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense } from 'react'
 import { Route, Switch, Redirect } from "react-router-dom"
 import styled from 'styled-components'
 import Navbar from 'layouts/Navbar'
@@ -15,13 +15,15 @@ export default class App extends Component {
         <Header />
         <Navbar />
         <Main>
-          <Switch>
-            {routes.map(({ privateRoute, name, ...props }) => (
-              privateRoute
-                ? <PrivateRoute {...props} key={name} />
-                : <Route {...props} key={name} />
-            ))}
-          </Switch>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+              {routes.map(({ privateRoute, name, ...props }) => (
+                privateRoute
+                  ? <PrivateRoute {...props} key={name} />
+                  : <Route {...props} key={name} />
+              ))}
+            </Switch>
+          </Suspense>
         </Main>
       </Container>
     )
