@@ -9,7 +9,7 @@ class ReduxPage extends Component {
   inputChangeHandler = event => {
     const value = event.target.value
 
-    this.props.setCount(value)
+    this.props.setCount(Number(value))
   }
 
   render() {
