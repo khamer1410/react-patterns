@@ -6,7 +6,13 @@ import routes from 'config/routes'
 import { NAV_ROUTES_ORDER } from 'config/const'
 
 export const Navbar = ({ location }) => {
-  const NavbarLinks = routes.filter(route => NAV_ROUTES_ORDER.find(name => name === route.name))
+  const NavbarLinks = routes
+    .filter(route => NAV_ROUTES_ORDER.includes(route.name))
+    .sort((prev, next) => {
+      const prevIndex = NAV_ROUTES_ORDER.indexOf(prev.name);
+      const nextIndex = NAV_ROUTES_ORDER.indexOf(next.name);
+      return (prevIndex < nextIndex) ? -1 : 1
+    })
 
   return (
     <Wrapper>
