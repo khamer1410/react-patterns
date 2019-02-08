@@ -11,6 +11,7 @@ const HigherOrderComponentDemoPage = lazy(()=> import('pages/higherOrderComponen
 const RenderPropsPage = lazy(()=> import('pages/renderProps/RenderPropsPage'))
 const ReduxPage = lazy(()=> import('pages/redux/ReduxPage'))
 const ReactUtilsPage = lazy(()=> import('pages/reactUtils/ReactUtilsPage'))
+const FormPage = lazy(()=> import('pages/form/FormPage'))
 
 export const routes = [
   {
@@ -23,6 +24,11 @@ export const routes = [
     name: 'Components demo',
     path: '/components-demo',
     component: DemoPage,
+  },
+  {
+    name: 'Form',
+    path: '/form',
+    component: FormPage
   },
   {
     name: 'React utils',

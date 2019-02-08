@@ -11,6 +11,7 @@ export const NAV_ROUTES_ORDER = [
   'Render props',
   'Redux',
   'Private section',
+  'Form'
 ]
 
 export const ROUTER_BASE_PATH_NAME = '/react-patterns'
