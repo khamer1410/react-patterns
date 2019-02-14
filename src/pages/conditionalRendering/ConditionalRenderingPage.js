@@ -21,13 +21,14 @@ export default class ConditionalRenderingPage extends Component {
         <div>
           <Button
             onClick={this.toggleState}
+            data-testid="toggleButton"
           >
             Toggle mood
           </Button>
         </div>
         <hr />
 
-        <ConditionalExample heading='&& operator'>
+        <ConditionalExample heading='&& operator' data-testid='statusInfo'>
           {!isOpen && (
             <Closed />
           )}
@@ -58,8 +59,8 @@ export default class ConditionalRenderingPage extends Component {
   }
 }
 
-const ConditionalExample = ({ heading, children }) => (
-  <FlexWrapper>
+const ConditionalExample = ({ heading, children, ...rest }) => (
+  <FlexWrapper {...rest}>
     <h2> {heading} </h2>
     {children}
   </FlexWrapper>

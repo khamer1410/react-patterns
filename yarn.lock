@@ -1773,6 +1773,11 @@ babel-plugin-named-asset-import@^0.3.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.0.tgz#3289ec622d19cd1cc84df8d784b41f1b048bd524"
   integrity sha512-to6Shd/r8fMRRg/MaOhDNfqpuXfjlQx3ypWDG6jh4ESCVZDJCgdgIalZbrnVlBPGgH/QeyHMjnGb2W+JJiy+NQ==
 
+babel-plugin-react-remove-properties@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-remove-properties/-/babel-plugin-react-remove-properties-0.3.0.tgz#7b623fb3c424b6efb4edc9b1ae4cc50e7154b87f"
+  integrity sha512-vbxegtXGyVcUkCvayLzftU95vuvpYFV85pRpeMpohMHeEY46Qe0VNWfkVVcCbaZ12CXHzDFOj0esumATcW83ng==
+
 "babel-plugin-styled-components@>= 1":
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.10.0.tgz#ff1f42ad2cc78c21f26b62266b8f564dbc862939"
@@ -3132,6 +3137,13 @@ cyclist@~0.2.2:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
+cypress-testing-library@^2.3.6:
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/cypress-testing-library/-/cypress-testing-library-2.3.6.tgz#79a52ff27ced8b2c43f5b90dc927f98d0b67866a"
+  integrity sha512-AxCVCT5y/Z0Gl66Yd/+tTEZ8mprNE9i3FRN6HgCH5NcLuHIUa/xhTzFp4E433lg2pr5ivpWL0P93KJcgyWL86Q==
+  dependencies:
+    dom-testing-library "^3.12.4"
+
 cypress@^3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-3.1.5.tgz#5227b2ce9306c47236d29e703bad9055d7218042"
@@ -3475,7 +3487,7 @@ dom-serializer@0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
-dom-testing-library@^3.13.1:
+dom-testing-library@^3.12.4, dom-testing-library@^3.13.1:
   version "3.16.6"
   resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.16.6.tgz#039daeef72425461922eb6cfb4b6cbb96e0d15a5"
   integrity sha512-yQ5ZjqIAVGNgS6p8nz/PrTZof6WGzbs+ZoiE6fbumflBwMa38fINOi5HtqIlE+CX/N8wOAkkpg7lmMOoSY9/zg==

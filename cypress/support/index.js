@@ -13,6 +13,9 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+// Utils for cypress testing, meaningful selectors, etc.
+import 'cypress-testing-library/add-commands'
+
 // Import commands.js using ES2015 syntax:
 import './commands'
 
