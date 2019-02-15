@@ -22,6 +22,13 @@ const AppContainer = () => (
   </Provider>
 )
 
+//Webpack hot-reload
+if (module.hot) {
+  module.hot.accept(AppContainer, () => {
+    const NextApp = AppContainer
+    ReactDOM.render(NextApp, document.getElementById('root'))
+  });
+}
 
 ReactDOM.render(<AppContainer />, document.getElementById('root'))
 registerServiceWorker()
