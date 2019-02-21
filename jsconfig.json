@@ -4,6 +4,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "checkJs": false,
+    "baseUrl": ".",
     "paths": {
       "*": [
         "src/*",

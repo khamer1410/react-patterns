@@ -20,7 +20,7 @@ export default class FormPage extends Component {
   };
 
   render() {
-    const { loading, error } = this.state;
+    const { loading } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
