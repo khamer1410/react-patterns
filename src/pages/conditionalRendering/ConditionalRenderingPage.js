@@ -16,6 +16,13 @@ export default class ConditionalRenderingPage extends Component {
   render() {
     const { isOpen } = this.state
 
+    const selectedView = () => {
+      // use condition to pick up a key
+      if (isOpen) return 'open';
+      if (!isOpen) return 'closed';
+      return 'open' //default
+    }
+
     return (
       <>
         <div>
@@ -54,6 +61,10 @@ export default class ConditionalRenderingPage extends Component {
         <ConditionalExample heading='HOC'>
           {withHOC(isOpen)(this.props)}
         </ConditionalExample>
+
+        <ConditionalExample heading='enum object'>
+          {enumViewTypes[selectedView()]}
+        </ConditionalExample>
       </>
     )
   }
@@ -90,3 +101,9 @@ const HOC = (firstComponent, secondComponent) => condition => props => {
 }
 
 const withHOC = HOC(Open, Closed)
+
+// enum conditional object
+const enumViewTypes = {
+  open: <Open/>,
+  closed: <Closed/>,
+}
