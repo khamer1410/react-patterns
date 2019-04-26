@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Infobox from 'components/InfoBox';
+import { ProfileCard } from 'pages/introPage/ProfileCard';
 
 export const IntroPage = () => (
   <>
@@ -13,6 +14,8 @@ export const IntroPage = () => (
         <p>It's (and probably always will be, as React is evolving) ongoing project - planned features and used technologies are listed below.</p>
       </span>
     </Infobox>
+
+    <ProfileCard></ProfileCard>
 
     <ListedSection header='TODO list' list={tasks} />
 

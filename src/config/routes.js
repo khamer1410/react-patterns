@@ -2,7 +2,7 @@ import { lazy } from 'react'
 
 const NotFoundPage = lazy(()=> import('pages/NotFoundPage'))
 const LoginPage = lazy(()=> import('pages/Login'))
-const IntroPage = lazy(()=> import('pages/IntroPage'))
+const IntroPage = lazy(()=> import('pages/introPage/IntroPage'))
 const DemoPage = lazy(()=> import('pages/componentsDemo/DemoPage'))
 const PrivateSection = lazy(()=> import('pages/PrivateSection'))
 const ConditionalRenderingPage = lazy(()=> import('pages/conditionalRendering/ConditionalRenderingPage'))
