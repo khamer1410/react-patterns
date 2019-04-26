@@ -31,13 +31,21 @@ export class Modal extends Component {
     children: null,
   };
 
-  componentDidMount = () => window.addEventListener('keydown', this.handleKeyDown);
+  componentDidUpdate(prevProps) {
+    if (prevProps.show !== this.props.show) {
+      this.toggleLockScroll()
+    }
+  }
 
-  componentWillUnmount = () => window.removeEventListener('keydown', this.handleKeyDown);
+  componentDidMount = () => { window.addEventListener('keydown', this.handleKeyDown) }
+
+  componentWillUnmount = () => { window.removeEventListener('keydown', this.handleKeyDown) };
 
   handleKeyDown = ({ key }) => key === 'Escape' && this.props.onClose();
 
   handleBackgroundClick = ({ target, currentTarget }) => target === currentTarget && this.props.onClose();
+
+  toggleLockScroll = () => { document.body.classList.toggle('lockScroll') }
 
   render() {
     const { show, onClose, header, children, ...props } = this.props;

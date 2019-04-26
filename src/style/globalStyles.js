@@ -26,6 +26,10 @@ const RawGlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
+  .lockScroll {
+    overflow: hidden;
+  }
 `
 
 RawGlobalStyles.defaultProps = {
