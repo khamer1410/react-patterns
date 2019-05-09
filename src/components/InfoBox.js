@@ -37,6 +37,6 @@ const InfoWrapper = styled.div`
   border-radius: 10px;
   background: ${({ theme }) => backgroundByTheme[theme]};
 `
-const Heading = styled.h4`
+const Heading = styled.h3`
   margin: 0;
 `

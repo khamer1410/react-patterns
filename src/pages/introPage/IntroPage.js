@@ -6,31 +6,40 @@ import { ProfileCard } from 'pages/introPage/ProfileCard';
 export const IntroPage = () => (
   <>
     <h1>React patterns</h1>
-    <Infobox>
+    <InfoboxWithSpacing>
       <span>
         <p>This site was created to have a build-from-scratch playground for React & React tools.</p>
         <p>By this approach, I can test new features or try some more complex patterns isolated, outside of a commercial project.</p>
         <p>No need to worry about dependencies, complexity - this is an easily customizable playground for React.</p>
         <p>It's (and probably always will be, as React is evolving) ongoing project - planned features and used technologies are listed below.</p>
       </span>
-    </Infobox>
+    </InfoboxWithSpacing>
 
-    <ProfileCard></ProfileCard>
+    <InfoboxWithSpacing>
+      <ProfileCard/>
+    </InfoboxWithSpacing>
 
-    <ListedSection header='TODO list' list={tasks} />
+    <InfoboxWithSpacing title='TODO list'>
+      <ListedSection list={tasks} />
+    </InfoboxWithSpacing>
 
-    <h2>Used technologies</h2>
-    <Wrapper>
-      <ListedSection header='JavaScript' list={JSitems} />
-      <ListedSection header='CSS' list={CSSItems} />
-      <ListedSection header='Other' list={otherItems} />
-    </Wrapper>
+    <InfoboxWithSpacing title='Used technologies'>
+      <ListedItemsWrapper>
+        <ListedSection header='JavaScript' list={JSitems} />
+        <ListedSection header='CSS' list={CSSItems} />
+        <ListedSection header='Other' list={otherItems} />
+      </ListedItemsWrapper>
+    </InfoboxWithSpacing>
   </>
 )
 
 export default IntroPage
 
-const Wrapper = styled.div`
+const InfoboxWithSpacing = styled(Infobox)`
+  margin-top: 30px;
+`
+
+const ListedItemsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 15px;
@@ -38,14 +47,12 @@ const Wrapper = styled.div`
 
 const ListedSection = props => (
   <section>
-    <div>
-      <h1>{props.header}</h1>
+      <h4>{props.header}</h4>
       <ul>
         {props.list.map(({ name }) => (
           <li key={name}>{name}</li>
         ))}
       </ul>
-    </div>
   </section>
 )
 
