@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import PureComponentExample from "./PureComponent"
 import LazySuspenseExample from "./LazySuspense/LazySuspenseExample"
+import ErrorBoundaryExample from "./ErrorBoundary"
+import {ErrorMaker} from "./ErrorBoundary"
 
 export default class ReactUtilsPage extends Component {
   render() {
@@ -12,6 +14,10 @@ export default class ReactUtilsPage extends Component {
         <hr/>
         <LazySuspenseExample/>
         <hr />
+        <ErrorBoundaryExample>
+          <ErrorMaker/>
+        </ErrorBoundaryExample>
+        <hr/>
       </div>
     );
   }
